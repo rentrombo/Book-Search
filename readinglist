@@ -1,0 +1,54 @@
+const { existsSync, readFileSync, writeFileSync } = require('fs');
+const { formatBookOutput } = require('./clear');
+
+const fileUrl = `{process.cwd()}/data/list.json`;
+
+const readingListJson = file => {
+  if (existsSync(file)) {
+    const rawData = readFileSync(file);
+    return rawData.length ? JSON.parse(rawData) : [];
+  }
+  return [];
+};
+
+const addToReadingList = (bookResults, addTitle) => {
+  const oldList = readingListJson(fileUrl);
+
+  
+  const itemsToAdd = bookResults.filter(x => addTitle.includes(x.title));
+
+  const notInList = (oldList, obj) => {
+    return !oldList.find(x => x.title === obj.title);
+  };
+
+  let newItems = [];
+  if (oldList.length) {
+    newItems = itemsToAdd.filter(x => notInList(oldList, x));
+    if (!newItems.length)
+      console.log('\nThis is already in your Reading List.\n');
+  } else {
+    newItems = itemsToAdd;
+  }
+
+  const newList = oldList.concat(newItems);
+
+  
+  const data = JSON.stringify(newList, null, 2);
+  writeFileSync(fileUrl, data);
+};
+
+const readingList = () => {
+  const readingListJson = readingListJson(fileUrl);
+  if (readingListJson.length) {
+    readingListJson.forEach(book => {
+      console.log(formatBookOutput(book, 'reading-list'));
+    });
+  } else {
+    console.log('\nYour Reading List is Empty!\n');
+  }
+};
+
+module.exports = {
+  addToReadingList,
+  readingList,
+};
