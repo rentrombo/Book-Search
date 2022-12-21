@@ -4,7 +4,7 @@ Search for a book and add it to a local reading list!
 	This application will give you the option of Searching a Book or going to your Reading List.
 	Use the arrow keys to navigate.
 	Press Enter to select.
-	Once a search has been conducted you have the option to add this to your Reading List. The program will let you know if the book has already been placed in your local 		reading list.
+	Once a search has been conducted you have the option to add this to your Reading List. The program will let you know if the book has already been placed in your local reading list.
 	You then can make your decision from the main menu again.
 	Enjoy!
 
