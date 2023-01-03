@@ -1,16 +1,20 @@
 const chalk = require('chalk');
 
+// chalk message themes
+const infoColor = chalk.green;
 const warningColor = chalk.red;
-const errorColor = chalk.red;
-const titleColor = chalk.bold.cyanBright;
-const authorsColor = chalk.italic.whiteBright;
+const errorColor = chalk.bgredBright;
+const helloByeColor = chalk.bold.cyanBright;
+const titleColor = chalk.magenta;
+const authorsColor = chalk.whiteBright;
 const publisherColor = chalk.whiteBright;
 
 module.exports = {
-warningColor,
-errorColor,
-titleColor,
-authorsColor,
-publisherColor,
-    
+  infoColor,
+  warningColor,
+  errorColor,
+  helloByeColor,
+  titleColor,
+  authorsColor,
+  publisherColor,
 };

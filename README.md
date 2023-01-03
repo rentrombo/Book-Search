@@ -10,6 +10,9 @@ Enter the below into CLI to install:
 ```
 npm i
 ```
+```
+npm link
+```
 
 ### How To Run Program
 Enter into CLI:
