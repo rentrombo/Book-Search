@@ -56,7 +56,7 @@ const bookCli = async () => {
       }
     }
    } catch (error) {
-    error = (errorColor('No results. Please start program over by entering `npm run search` in your CLI.))
+    error = (errorColor("No results. Please start program over by entering `npm run search` in your CLI."))
   }
 };
 
