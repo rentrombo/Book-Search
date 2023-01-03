@@ -55,8 +55,9 @@ const bookCli = async () => {
           console.log('Must select from one of the choices given.');
       }
     }
-   } catch (error) {
-    error = (errorColor("No results. Please start program over by entering `npm run search` in your CLI."))
+   } catch (undefined) {
+    error = console.log('No results found. Please restart program with npm run search.')
+    throw (error)
   }
 };
 
